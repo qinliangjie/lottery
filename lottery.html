@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/lottery.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+</head>
+<body>
+	<div class="container">
+		<div class="top_">
+			<div class="close"></div>
+		</div>
+		<div class="main_">
+			<img src="img/bg.jpg" alt="">
+			<div class="info_list" id="info_list">
+				<ul id="list1">
+					<li><span>1232</span>用户获得<span>122123cs12</span></li>
+					<li><span>1232</span>用户获2得<span>122342ds12312</span></li>
+					<li><span>12232</span>用户获得<span>1223f3212312</span></li>
+					<li><span>1232</span>用户2获得<span>122d122312</span></li>
+					<li><span>122332</span>用4户2获得<span>12212312</span></li>
+					<li><span>123142</span>用3户获得<span>122f3df12312</span></li>
+					<li><span>12323</span>用户32获得<span>12gb212312</span></li>
+					<li><span>15232</span>用户获得<span>12212312</span></li>
+				</ul>
+				<ul id="list2">
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="box">
+		<div class="lottery">
+			<div class="block">
+				<div class="content">
+					<div class="none">金币888</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="content">
+					<div class="img">
+						<img src="img/login1.png" />
+					</div>
+					<div class="none">
+						金币1888
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="content">
+					<div class="none">金币2888</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="content">
+					<div class="none">金币8888</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="content">
+					<div class="img">
+						<img src="img/login1.png" />
+					</div>
+					<div class="none">金币50000</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="content">
+					<div class="none">金币10W</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="content">
+					<div class="img">
+						<img src="img/login1.png" />
+					</div>
+					<div class="none">50点</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="content">
+					<div class="none">100点</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn">抽 奖</div>
+		<div class="str"></div>
+	</div> -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/flexible.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<!-- <script type="text/javascript" src="js/lottery.js"></script> -->
+	<script>
+		// var obj = {a :1}
+		// var vuex = new Vue({
+		//   el: '#app',
+		//   data: obj
+		// })
+		// var vuebjyx = new Vue({
+		//   el: '#bjyx',
+		//   data: obj
+		// })
+	var box=document.getElementById("info_list");
+    var l1=document.getElementById("list1");
+    var l2=document.getElementById("list2");
+    l2.innerHTML=l1.innerHTML;//克隆list1的数据，使得list2和list1的数据一样
+    function scrollup(){
+        if(box.scrollTop>=l1.offsetHeight){ //滚动条距离顶部的值恰好等于list1的高度时，达到滚动临界点，此时将让scrollTop=0,让list1回到初始位置，实现无缝滚动
+            box.scrollTop=0;
+        }else{
+            box.scrollTop++;
+        }
+    }
+    
+    var scrollMove=setInterval(scrollup,60);//数值越大，滚动速度越慢
+
+    //鼠标经过时，滚动停止
+    // box.onmouseover=function(){
+    //     clearInterval(scrollMove)
+    // }
+    box.addEventListener('touchstart',function(){
+    	clearInterval(scrollMove)
+    })
+    //鼠标离开时，滚动继续
+    // box.onmouseout=function(){
+    //     scrollMove=setInterval(scrollup,50);
+    // }
+    box.addEventListener('touchend',function(){
+    	scrollMove=setInterval(scrollup,60);
+    })
+	</script>
+</body>
+</html>
