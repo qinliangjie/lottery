@@ -29,79 +29,129 @@
 					
 				</ul>
 			</div>
+			<div class="task_list">
+				<div class="task_item">
+					<span>1.参与参与参与参与参与参与参与参与参与参与参与参与</span>
+					<img src="img/complate.png" alt="">
+					<div class="clear"></div>
+				</div>
+				<div class="task_item">
+					<span>1.参与*******</span>
+					<img src="img/complate.png" alt="">
+					<div class="clear"></div>
+				</div>
+				<div class="task_item">
+					<span>1.参与*******</span>
+					<img src="img/complate.png" alt="">
+					<div class="clear"></div>
+				</div>
+				<div class="task_item">
+					<span>1.参与*******</span>
+					<img src="img/complate.png" alt="">
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="root_list">
+				<div class="root_item">
+					1.参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与
+				</div>
+				<div class="root_item">
+					1.参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与
+				</div>
+				<div class="root_item">
+					1.参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与
+				</div>
+			</div>
+		</div>
+		<div class="lottery_time">
+			剩餘抽獎次數N次
+		</div>
+		<div class="lottery_record">
+			我的獲獎記錄
 		</div>
 	</div>
-	<!-- <div class="box">
+	<div class="box">
 		<div class="lottery">
 			<div class="block">
 				<div class="content">
-					<div class="none">金币888</div>
+					<div class="none">金幣888</div>
+					<div class="img">
+						<img src="img/gift8.png" />
+					</div>
+					
 				</div>
 			</div>
 			<div class="block">
 				<div class="content">
-					<div class="img">
-						<img src="img/login1.png" />
-					</div>
 					<div class="none">
-						金币1888
+						金幣1888
 					</div>
-				</div>
-			</div>
-			<div class="block">
-				<div class="content">
-					<div class="none">金币2888</div>
-				</div>
-			</div>
-			<div class="block">
-				<div class="content">
-					<div class="none">金币8888</div>
-				</div>
-			</div>
-			<div class="block">
-				<div class="content">
 					<div class="img">
-						<img src="img/login1.png" />
+						<img src="img/gift188.png" />
 					</div>
-					<div class="none">金币50000</div>
+					
 				</div>
 			</div>
 			<div class="block">
 				<div class="content">
-					<div class="none">金币10W</div>
-				</div>
-			</div>
-			<div class="block">
-				<div class="content">
+					<div class="none">金幣2888</div>
 					<div class="img">
-						<img src="img/login1.png" />
+						<img src="img/gift288.png" />
 					</div>
-					<div class="none">50点</div>
 				</div>
 			</div>
 			<div class="block">
 				<div class="content">
-					<div class="none">100点</div>
+					<div class="none">金幣8888</div>
+					<div class="img">
+						<img src="img/gift888.png" />
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="content">
+					<div class="none">金幣5萬</div>
+					<div class="img">
+						<img src="img/gift.png" />
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="content">
+					<div class="none">金幣10萬</div>
+					<div class="img">
+						<img src="img/gift1000.png" />
+					</div>
+				</div>
+			</div>
+			<div class="block">
+				<div class="content">
+					<div class="none">50 點 Mycard</div>
+					<div class="img">
+						<img src="img/mycard.png" />
+					</div>
+					
+				</div>
+			</div>
+			<div class="block">
+				<div class="content">
+					<div class="none">100點Mycard</div>
+					<div class="img">
+						<img src="img/mycard.png" />
+					</div>
+					
 				</div>
 			</div>
 		</div>
-		<div class="btn">抽 奖</div>
-		<div class="str"></div>
-	</div> -->
+		<div class="btn"></div>
+	</div>
+
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/flexible.js"></script>
 	<script type="text/javascript" src="js/vue.min.js"></script>
-	<!-- <script type="text/javascript" src="js/lottery.js"></script> -->
+	<script type="text/javascript" src="js/lottery.js"></script>
 	<script>
-		// var obj = {a :1}
-		// var vuex = new Vue({
-		//   el: '#app',
-		//   data: obj
-		// })
-		// var vuebjyx = new Vue({
-		//   el: '#bjyx',
-		//   data: obj
-		// })
+	
 	var box=document.getElementById("info_list");
     var l1=document.getElementById("list1");
     var l2=document.getElementById("list2");
@@ -116,17 +166,9 @@
     
     var scrollMove=setInterval(scrollup,60);//数值越大，滚动速度越慢
 
-    //鼠标经过时，滚动停止
-    // box.onmouseover=function(){
-    //     clearInterval(scrollMove)
-    // }
     box.addEventListener('touchstart',function(){
     	clearInterval(scrollMove)
     })
-    //鼠标离开时，滚动继续
-    // box.onmouseout=function(){
-    //     scrollMove=setInterval(scrollup,50);
-    // }
     box.addEventListener('touchend',function(){
     	scrollMove=setInterval(scrollup,60);
     })

@@ -7,30 +7,23 @@ function clickBtn() {
 	var n1 = Math.floor(Math.random()*10000);
 	var n2 = Math.floor(Math.random()*4+4);
 	if(n1>0&&n1<=5){
-		lottery.ch = 45 + 360*n2 + 22.5;
-		slectList.push('a')
+		lottery.ch = 45 + 360*n2 ;
 	}else if(n1>5&&n1<=25){
-		lottery.ch = 90+ 360*n2 + 22.5;
-		slectList.push('b')
+		lottery.ch = 90+ 360*n2 ;
 	}else if(n1>25&&n1<=65){
-		lottery.ch = 135 + 360*n2 + 22.5;
-		slectList.push('c')
+		lottery.ch = 135 + 360*n2 ;
 	}else if(n1>65&&n1<=140){
-		lottery.ch = 180 + 360*n2 + 22.5;
-		slectList.push('d')
+		lottery.ch = 180 + 360*n2 ;
 	}else if(n1>140&&n1<=290){
-		lottery.ch = 225 + 360*n2 + 22.5;
-		slectList.push('e')
+		lottery.ch = 225 + 360*n2 ;
 	}else if(n1>290&&n1<=910){
-		lottery.ch = 270 + 360*n2 + 22.5;
-		slectList.push('f')
+		lottery.ch = 270 + 360*n2 ;
 	}else if(n1>910&&n1<=2580){
-		lottery.ch = 315+ 360*n2 +22.5 ;
-		slectList.push('h')
+		lottery.ch = 315+ 360*n2  ;
 	}else if(n1>2580&&n1<=10000){
-		lottery.ch = 360+ 360*n2 + 22.5;
+		lottery.ch = 360+ 360*n2 ;
 	}
-	$(this).unbind().css("cursor", "wait");
+	
 	$('.lottery').css({
 		"transition": "all 5s ease",
 		"transform": "rotate("+lottery.ch+"deg)",
